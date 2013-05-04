@@ -77,7 +77,7 @@ namespace hpUploadServiceConsole
                     Logger.WriteEntry("Archived file: " + fi.Name, EventLogEntryType.Information);
                 }
 
-                if (fi.Name.IndexOf("copy") > -1)
+                if (fi.Name.IndexOf("copy") > -1 || fi.Name.IndexOf("Chart") > -1)
                 {
                     string institId = fi.Name.Substring(0, 2);
 
@@ -103,11 +103,11 @@ namespace hpUploadServiceConsole
                     string sKey = iRnd.ToString() + key.ToString();
 
                     var nvc = new NameValueCollection();
-                    nvc.Add("institID", institId);
+                    nvc.Add("siteCode", institId);
                     nvc.Add("key", sKey);
 
                     UploadFile("https://halfpintstudy.org/hpProd/FileManager/ChecksUpload",
-                         fi.FullName, "file", "application/msexcel", nvc);
+                         fi.FullName, fi.Name, "file", "application/msexcel", nvc);
 
 
                 }
@@ -117,18 +117,21 @@ namespace hpUploadServiceConsole
 
         }
 
-        private static void UploadFile(string url, string fullName, string paramName, string contentType, NameValueCollection nvc)
+        private static void UploadFile(string url, string fullName, string fileName, string paramName, string contentType, NameValueCollection nvc)
         {
             HttpRequestMessage rm = new HttpRequestMessage();
             
             using (var client = new HttpClient())
             using (var content = new MultipartFormDataContent())
             {
-                var fileContent = new ByteArrayContent(new byte[100]);
-                fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
-                {
-                    FileName = "myFilename.txt"
-                };
+                //var fileContent = new ByteArrayContent(new byte[100]);
+                var filestream = File.Open(fullName, FileMode.Open);
+                content.Add(new StreamContent(filestream), "file", fileName);
+                
+                //fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
+                //{
+                //    FileName = fileName
+                //};
 
                 //var formData = new FormUrlEncodedContent(new[]
                 //                            {
@@ -145,7 +148,7 @@ namespace hpUploadServiceConsole
                     
                 }
                 
-                content.Add(fileContent);
+                //content.Add((StreamContent)fileContent);
                 //var values = new[]
                 //{
                 //    new KeyValuePair<string, string>("Foo", "Bar"),
