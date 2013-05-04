@@ -166,8 +166,8 @@ namespace hpUploadServiceConsole
                 //};
                 //content.Add(fileContent);
 
-                //var requestUri = "https://halfpintstudy.org/hpUpload/api/upload";
-                var requestUri = "http://localhost:1736/api/upload";
+                var requestUri = "https://halfpintstudy.org/hpUpload/api/upload";
+                //var requestUri = "http://localhost:1736/api/upload";
                 var result = client.PostAsync(requestUri, content).Result;
             }
         }
