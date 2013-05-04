@@ -130,15 +130,21 @@ namespace hpUploadServiceConsole
                     FileName = "myFilename.txt"
                 };
 
-                var formData = new FormUrlEncodedContent(new[]
-                                            {
-                                                new KeyValuePair<string, string>("name", "ali"),
-                                                new KeyValuePair<string, string>("title", "ostad")
-                                            });
+                //var formData = new FormUrlEncodedContent(new[]
+                //                            {
+                //                                new KeyValuePair<string, string>("name", "ali"),
+                //                                new KeyValuePair<string, string>("title", "ostad")
+                //                            });
 
 
                 //MultipartContent content = new MultipartContent();
-                content.Add(formData);
+                //content.Add(formData);
+                foreach (string key in nvc.Keys)
+                {
+                    content.Add(new StringContent(nvc[key]), key);
+                    
+                }
+                
                 content.Add(fileContent);
                 //var values = new[]
                 //{
