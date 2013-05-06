@@ -146,8 +146,9 @@ namespace hpUploadServiceConsole
                     content.Add(new StringContent(nvc[key]), key);
                 }
                 
-                var requestUri = "https://halfpintstudy.org/hpUpload/api/upload";
+                //var requestUri = "https://halfpintstudy.org/hpUpload/api/upload";
                 //var requestUri = "http://asus1/hpuploadapi/api/upload?userId=34";
+                var requestUri = "http://joelaptop4/hpuploadapi/api/upload?userId=34";
                 var result = client.PostAsync(requestUri, content).Result;
             }
         }
