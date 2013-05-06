@@ -66,7 +66,20 @@ namespace hpUploadServiceConsole
                 return;
             }
 
+            //arcive them first
+            fis = di.GetFiles();
+            foreach (var fi in fis)
+            {
+                //if the file is older than 1 week then archive
+                if (fi.LastWriteTime.CompareTo(DateTime.Today.AddDays(-7)) < 0)
+                {
+                    fi.MoveTo(@"C:\HalfPintArchive\" + fi.Name);
+                    Logger.WriteEntry("Archived file: " + fi.Name, EventLogEntryType.Information);
+                }
 
+            }
+
+            //now upload
             fis = di.GetFiles();
             foreach (var fi in fis)
             {
@@ -119,55 +132,22 @@ namespace hpUploadServiceConsole
 
         private static void UploadFile(string url, string fullName, string fileName, string paramName, string contentType, NameValueCollection nvc)
         {
-            HttpRequestMessage rm = new HttpRequestMessage();
+            var rm = new HttpRequestMessage();
             
             using (var client = new HttpClient())
             using (var content = new MultipartFormDataContent())
             {
-                //var fileContent = new ByteArrayContent(new byte[100]);
                 var filestream = File.Open(fullName, FileMode.Open);
                 content.Add(new StreamContent(filestream), "file", fileName);
                 
-                //fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
-                //{
-                //    FileName = fileName
-                //};
-
-                //var formData = new FormUrlEncodedContent(new[]
-                //                            {
-                //                                new KeyValuePair<string, string>("name", "ali"),
-                //                                new KeyValuePair<string, string>("title", "ostad")
-                //                            });
-
-
-                //MultipartContent content = new MultipartContent();
                 //content.Add(formData);
                 foreach (string key in nvc.Keys)
                 {
                     content.Add(new StringContent(nvc[key]), key);
-                    
                 }
                 
-                //content.Add((StreamContent)fileContent);
-                //var values = new[]
-                //{
-                //    new KeyValuePair<string, string>("Foo", "Bar"),
-                //    new KeyValuePair<string, string>("More", "Less"),
-                //};
-                //foreach (var keyValuePair in values)
-                //{
-                //    content.Add(new StringContent(keyValuePair.Value), keyValuePair.Key);
-                //}
-
-                //var fileContent = new ByteArrayContent(System.IO.File.ReadAllBytes(fullName));
-                //fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
-                //{
-                //    FileName = "Foo.txt"
-                //};
-                //content.Add(fileContent);
-
                 var requestUri = "https://halfpintstudy.org/hpUpload/api/upload";
-                //var requestUri = "http://localhost:1736/api/upload";
+                //var requestUri = "http://asus1/hpuploadapi/api/upload?userId=34";
                 var result = client.PostAsync(requestUri, content).Result;
             }
         }
