@@ -4,10 +4,12 @@ using System.Collections.Specialized;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 
 namespace hpUploadServiceConsole
@@ -92,7 +94,7 @@ namespace hpUploadServiceConsole
 
                 if (fi.Name.IndexOf("copy") > -1 || fi.Name.IndexOf("Chart") > -1)
                 {
-                    string institId = fi.Name.Substring(0, 2);
+                    string siteCode = fi.Name.Substring(0, 2);
 
                     //formulate key
                     //add all the numbers in the file name
@@ -106,23 +108,16 @@ namespace hpUploadServiceConsole
 
                     key *= key;
 
-                    int iInstitId = int.Parse(institId);
+                    int iInstitId = int.Parse(siteCode);
 
 
                     key = key * iInstitId;
                     var rnd = new Random();
                     int iRnd = rnd.Next(100000, 999999);
-
                     string sKey = iRnd.ToString() + key.ToString();
-
-                    var nvc = new NameValueCollection();
-                    nvc.Add("siteCode", institId);
-                    nvc.Add("key", sKey);
-
+                    
                     UploadFile("https://halfpintstudy.org/hpProd/FileManager/ChecksUpload",
-                         fi.FullName, fi.Name, "file", "application/msexcel", nvc);
-
-
+                         fi.FullName, siteCode, sKey, fi.Name);
                 }
 
             }
@@ -130,25 +125,24 @@ namespace hpUploadServiceConsole
 
         }
 
-        private static void UploadFile(string url, string fullName, string fileName, string paramName, string contentType, NameValueCollection nvc)
+        private static void UploadFile(string url, string fullName, string siteCode, string key, string fileName)
         {
             var rm = new HttpRequestMessage();
-            
+
+            var qsCollection = HttpUtility.ParseQueryString(string.Empty);
+            qsCollection["siteCode"] = siteCode;
+            qsCollection["key"] = key;
+            qsCollection["fileName"] = fileName;
+            var queryString = qsCollection.ToString();
             using (var client = new HttpClient())
             using (var content = new MultipartFormDataContent())
             {
                 var filestream = File.Open(fullName, FileMode.Open);
                 content.Add(new StreamContent(filestream), "file", fileName);
                 
-                //content.Add(formData);
-                foreach (string key in nvc.Keys)
-                {
-                    content.Add(new StringContent(nvc[key]), key);
-                }
-                
                 //var requestUri = "https://halfpintstudy.org/hpUpload/api/upload";
-                //var requestUri = "http://asus1/hpuploadapi/api/upload?userId=34";
-                var requestUri = "http://joelaptop4/hpuploadapi/api/upload?userId=34";
+                var requestUri = "http://asus1/hpuploadapi/api/upload?" + queryString;
+                //var requestUri = "http://joelaptop4/hpuploadapi/api/upload?" + queryString;
                 var result = client.PostAsync(requestUri, content).Result;
             }
         }
