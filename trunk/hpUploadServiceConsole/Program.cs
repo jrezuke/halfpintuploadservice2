@@ -141,8 +141,8 @@ namespace hpUploadServiceConsole
                 content.Add(new StreamContent(filestream), "file", fileName);
                 
                 //var requestUri = "https://halfpintstudy.org/hpUpload/api/upload";
-                var requestUri = "http://asus1/hpuploadapi/api/upload?" + queryString;
-                //var requestUri = "http://joelaptop4/hpuploadapi/api/upload?" + queryString;
+                //var requestUri = "http://asus1/hpuploadapi/api/upload?" + queryString;
+                var requestUri = "http://joelaptop4/hpuploadapi/api/upload?" + queryString;
                 var result = client.PostAsync(requestUri, content).Result;
             }
         }
