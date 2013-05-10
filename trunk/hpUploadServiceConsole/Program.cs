@@ -20,6 +20,10 @@ namespace hpUploadServiceConsole
         
         static void Main(string[] args)
         {
+            AppDomain currentDomain = AppDomain.CurrentDomain;
+            currentDomain.UnhandledException += new UnhandledExceptionEventHandler(MyHandler);
+            
+
             if (!EventLog.SourceExists("Halfpint"))
             {
                 EventLog.CreateEventSource(
@@ -94,11 +98,14 @@ namespace hpUploadServiceConsole
 
                 if (fi.Name.IndexOf("copy") > -1 || fi.Name.IndexOf("Chart") > -1)
                 {
+                    //skip test files
+                    if (fi.Name.StartsWith("T"))
+                        continue;
+
                     string siteCode = fi.Name.Substring(0, 2);
 
                     //formulate key
                     //add all the numbers in the file name
-
                     int key = 0;
                     foreach (var c in fi.Name)
                     {
@@ -125,6 +132,14 @@ namespace hpUploadServiceConsole
 
         }
 
+        private static void MyHandler(object sender, UnhandledExceptionEventArgs args)
+        {
+            var e = (Exception)args.ExceptionObject;
+            Console.WriteLine("Exception: " + e.Message);
+            Console.Read();
+            Environment.Exit(10);
+        }
+
         private static void UploadFile(string url, string fullName, string siteCode, string key, string fileName)
         {
             var rm = new HttpRequestMessage();
@@ -139,10 +154,10 @@ namespace hpUploadServiceConsole
             {
                 var filestream = File.Open(fullName, FileMode.Open);
                 content.Add(new StreamContent(filestream), "file", fileName);
-                
-                //var requestUri = "https://halfpintstudy.org/hpUpload/api/upload";
+
+                var requestUri = "https://halfpintstudy.org/hpUpload/api/upload?" + queryString; 
                 //var requestUri = "http://asus1/hpuploadapi/api/upload?" + queryString;
-                var requestUri = "http://joelaptop4/hpuploadapi/api/upload?" + queryString;
+                //var requestUri = "http://joelaptop4/hpuploadapi/api/upload?" + queryString;
                 var result = client.PostAsync(requestUri, content).Result;
             }
         }
