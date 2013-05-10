@@ -3,16 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hpUploadServiceConsole", "hpUploadServiceConsole\hpUploadServiceConsole.csproj", "{0FA0662E-7259-4A6B-91BA-534D2DEA951A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalfpintUploadService", "HalfpintUploadService\HalfpintUploadService.csproj", "{1164B698-3D0B-4715-81AE-7DACC3398FBC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
 		Debug|Any CPU = Debug|Any CPU
+		DVD-5|Any CPU = DVD-5|Any CPU
 		Release|Any CPU = Release|Any CPU
+		SingleImage|Any CPU = SingleImage|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FA0662E-7259-4A6B-91BA-534D2DEA951A}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{0FA0662E-7259-4A6B-91BA-534D2DEA951A}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
 		{0FA0662E-7259-4A6B-91BA-534D2DEA951A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0FA0662E-7259-4A6B-91BA-534D2DEA951A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FA0662E-7259-4A6B-91BA-534D2DEA951A}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FA0662E-7259-4A6B-91BA-534D2DEA951A}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
 		{0FA0662E-7259-4A6B-91BA-534D2DEA951A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FA0662E-7259-4A6B-91BA-534D2DEA951A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FA0662E-7259-4A6B-91BA-534D2DEA951A}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{0FA0662E-7259-4A6B-91BA-534D2DEA951A}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{1164B698-3D0B-4715-81AE-7DACC3398FBC}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{1164B698-3D0B-4715-81AE-7DACC3398FBC}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{1164B698-3D0B-4715-81AE-7DACC3398FBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1164B698-3D0B-4715-81AE-7DACC3398FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1164B698-3D0B-4715-81AE-7DACC3398FBC}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{1164B698-3D0B-4715-81AE-7DACC3398FBC}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{1164B698-3D0B-4715-81AE-7DACC3398FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1164B698-3D0B-4715-81AE-7DACC3398FBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1164B698-3D0B-4715-81AE-7DACC3398FBC}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{1164B698-3D0B-4715-81AE-7DACC3398FBC}.SingleImage|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
