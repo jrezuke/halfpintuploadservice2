@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration.Install;
 using System.Linq;
+using System.ServiceProcess;
 
 
 namespace HalfpintUploadService2
@@ -14,6 +15,12 @@ namespace HalfpintUploadService2
         public ProjectInstaller()
         {
             InitializeComponent();
+        }
+
+        private void serviceInstaller1_Committed(object sender, InstallEventArgs e)
+        {
+            ServiceController sc = new ServiceController("HalfpintUploadService");
+            sc.Start();
         }
     }
 }

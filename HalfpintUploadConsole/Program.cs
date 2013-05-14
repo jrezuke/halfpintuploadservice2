@@ -126,6 +126,7 @@ namespace HalfpintUploadConsole
 
         private static void UploadFile(string url, string fullName, string siteCode, string key, string fileName)
         {
+            _logger.WriteEntry("UploadFile: " + fileName, EventLogEntryType.Information);
             var rm = new HttpRequestMessage();
 
             var qsCollection = HttpUtility.ParseQueryString(string.Empty);
@@ -139,9 +140,9 @@ namespace HalfpintUploadConsole
                 var filestream = File.Open(fullName, FileMode.Open);
                 content.Add(new StreamContent(filestream), "file", fileName);
 
-                //var requestUri = "https://halfpintstudy.org/hpUpload/api/upload?" + queryString; 
+                var requestUri = "https://halfpintstudy.org/hpUpload/api/upload?" + queryString; 
                 //var requestUri = "http://asus1/hpuploadapi/api/upload?" + queryString;
-                var requestUri = "http://joelaptop4/hpuploadapi/api/upload?" + queryString;
+                //var requestUri = "http://joelaptop4/hpuploadapi/api/upload?" + queryString;
                 var result = client.PostAsync(requestUri, content).Result;
             }
         }
@@ -150,7 +151,8 @@ namespace HalfpintUploadConsole
         {
             var e = (Exception)args.ExceptionObject;
             Console.WriteLine("Exception: " + e.Message);
-            Console.Read();
+            _logger.WriteEntry("Exception: " + e.Message, EventLogEntryType.Error);
+            //Console.Read();
             Environment.Exit(10);
         }
     }
