@@ -27,7 +27,7 @@ namespace HalfpintUploadService2
         protected override void OnStart(string[] args)
         {
             _logger.WriteEntry("OnStart", EventLogEntryType.Information);
-            _timer = new Timer { Interval = 30000, Enabled = true, AutoReset = true };
+            _timer = new Timer { Interval = 3600000, Enabled = true, AutoReset = true };
             _timer.Start();
             _timer.Elapsed += TimerElapsed;
             _logger.WriteEntry("Timer started", EventLogEntryType.Information);
