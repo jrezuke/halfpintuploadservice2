@@ -6,7 +6,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{5FCD08EA-97E4-4DDA-9450-0BE9D36FDD00}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HalfpintUploadConsole</RootNamespace>
     <AssemblyName>HalfpintUploadConsole</AssemblyName>
@@ -36,6 +36,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Folder-Upload-icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
