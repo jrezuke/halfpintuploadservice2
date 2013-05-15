@@ -15,26 +15,20 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_74285B03D8261E97BCAB38C3DCB5307D"
+        "MsmKey" = "8:_0D4B15595F073BD265E9B26CF38F0271"
         "OwnerKey" = "8:_A41E3D1C6F5C427FA4767D8CBDCDF8D1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_9CB579FEE9A37FE1E6B5A12D4492B081"
+        "MsmKey" = "8:_270968A37ACD4B00528CAB183D9DBD26"
+        "OwnerKey" = "8:_0D4B15595F073BD265E9B26CF38F0271"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_270968A37ACD4B00528CAB183D9DBD26"
         "OwnerKey" = "8:_A41E3D1C6F5C427FA4767D8CBDCDF8D1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9CB579FEE9A37FE1E6B5A12D4492B081"
-        "OwnerKey" = "8:_74285B03D8261E97BCAB38C3DCB5307D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9CB579FEE9A37FE1E6B5A12D4492B081"
-        "OwnerKey" = "8:_E5CC4AFBC637A0E24A18C1668D407DAC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -45,50 +39,56 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C8C4C9D1ABD3D4B240244A4865005695"
+        "MsmKey" = "8:_D80693A989CBC959E03BD7B328B463A4"
+        "OwnerKey" = "8:_0D4B15595F073BD265E9B26CF38F0271"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D80693A989CBC959E03BD7B328B463A4"
+        "OwnerKey" = "8:_FABA3B66796DCECE86F54509E5086FA9"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D80693A989CBC959E03BD7B328B463A4"
         "OwnerKey" = "8:_A41E3D1C6F5C427FA4767D8CBDCDF8D1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_C8C4C9D1ABD3D4B240244A4865005695"
-        "OwnerKey" = "8:_74285B03D8261E97BCAB38C3DCB5307D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_E5CC4AFBC637A0E24A18C1668D407DAC"
-        "OwnerKey" = "8:_A41E3D1C6F5C427FA4767D8CBDCDF8D1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_74285B03D8261E97BCAB38C3DCB5307D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_FABA3B66796DCECE86F54509E5086FA9"
         "OwnerKey" = "8:_A41E3D1C6F5C427FA4767D8CBDCDF8D1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C8C4C9D1ABD3D4B240244A4865005695"
+        "OwnerKey" = "8:_A41E3D1C6F5C427FA4767D8CBDCDF8D1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E5CC4AFBC637A0E24A18C1668D407DAC"
+        "OwnerKey" = "8:_FABA3B66796DCECE86F54509E5086FA9"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9CB579FEE9A37FE1E6B5A12D4492B081"
+        "OwnerKey" = "8:_0D4B15595F073BD265E9B26CF38F0271"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_270968A37ACD4B00528CAB183D9DBD26"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_D80693A989CBC959E03BD7B328B463A4"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -109,6 +109,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -125,6 +133,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -146,7 +162,7 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "FrameworkVersion" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                "FrameworkVersion" = "8:.NETFramework,Version=v4.0"
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=131000"
                 }
@@ -154,14 +170,14 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_74285B03D8261E97BCAB38C3DCB5307D"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0D4B15595F073BD265E9B26CF38F0271"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_74285B03D8261E97BCAB38C3DCB5307D"
+                    "_0D4B15595F073BD265E9B26CF38F0271"
                     {
                     "Name" = "8:System.Net.Http.Formatting.dll"
                     "Attributes" = "3:512"
@@ -185,45 +201,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9CB579FEE9A37FE1E6B5A12D4492B081"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_9CB579FEE9A37FE1E6B5A12D4492B081"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Net.Http.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_4DA6E75EABCB46E4A7627C6A1260DAF6"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C8C4C9D1ABD3D4B240244A4865005695"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_270968A37ACD4B00528CAB183D9DBD26"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_C8C4C9D1ABD3D4B240244A4865005695"
+                    "_270968A37ACD4B00528CAB183D9DBD26"
                     {
                     "Name" = "8:Newtonsoft.Json.dll"
                     "Attributes" = "3:512"
@@ -247,14 +232,45 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E5CC4AFBC637A0E24A18C1668D407DAC"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D80693A989CBC959E03BD7B328B463A4"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_D80693A989CBC959E03BD7B328B463A4"
+                    {
+                    "Name" = "8:System.Net.Http.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Net.Http.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_4DA6E75EABCB46E4A7627C6A1260DAF6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FABA3B66796DCECE86F54509E5086FA9"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_E5CC4AFBC637A0E24A18C1668D407DAC"
+                    "_FABA3B66796DCECE86F54509E5086FA9"
                     {
                     "Name" = "8:System.Net.Http.WebRequest.dll"
                     "Attributes" = "3:512"
@@ -856,7 +872,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A41E3D1C6F5C427FA4767D8CBDCDF8D1"
             {
-            "SourcePath" = "8:..\\HalfpintUploadConsole\\obj\\x86\\Debug\\HalfpintUploadConsole.exe"
+            "SourcePath" = "8:..\\HalfpintUploadConsole\\obj\\x86\\Release\\HalfpintUploadConsole.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_4DA6E75EABCB46E4A7627C6A1260DAF6"
