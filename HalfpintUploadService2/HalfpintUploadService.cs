@@ -93,13 +93,6 @@ namespace HalfpintUploadService2
             fis = di.GetFiles();
             foreach (var fi in fis)
             {
-                //if the file is older than 1 week then archive
-                if (fi.LastWriteTime.CompareTo(DateTime.Today.AddDays(-7)) < 0)
-                {
-                    fi.MoveTo(@"C:\HalfPintArchive\" + fi.Name);
-                    _logger.WriteEntry("Archived file: " + fi.Name, EventLogEntryType.Information);
-                }
-
                 if (fi.Name.IndexOf("copy") > -1 || fi.Name.IndexOf("Chart") > -1)
                 {
                     //skip test files
