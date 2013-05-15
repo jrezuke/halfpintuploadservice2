@@ -10,10 +10,15 @@ namespace HalfpintUploadConsole
     class Program
     {
         private static EventLog _logger;
+        
         static void Main(string[] args)
         {
             Console.WriteLine("Starting Halfpint Upload Console");
-            Console.WriteLine("MachineName: {0}", Environment.MachineName);
+            
+            string computerName = Environment.MachineName;
+            Console.WriteLine("MachineName: {0}", computerName);
+            
+            
             string arg = string.Empty;
             if (args.Length > 0)
             {
@@ -37,16 +42,18 @@ namespace HalfpintUploadConsole
 
             //var di = new DirectoryInfo(localDataPath);
             
-            DoChecksUploads();
-
-            if(arg == "novanet")
-                DoNovanetUploads();
-
-            Console.Read();
+            //string siteCode = DoChecksUploads();
+            string siteCode = "01";
+            if (!string.IsNullOrEmpty(siteCode))
+            {
+                if (arg == "novanet")
+                    DoNovanetUploads(siteCode, computerName);
+            }
+            //Console.Read();
 
         }
 
-        private static void DoNovanetUploads()
+        private static void DoNovanetUploads(string siteCode, string computerName)
         {
             Console.WriteLine("Starting novanet upload console");
             _logger.WriteEntry("Starting novanet upload console", EventLogEntryType.Information);
@@ -63,15 +70,38 @@ namespace HalfpintUploadConsole
             FileInfo[] fis = di.GetFiles();
             foreach (var fi in fis)
             {
-
+                UploadNovaNetFile(fi.FullName, siteCode, computerName, fi.Name);
             }
         }
 
-        private static void DoChecksUploads()
+        private static void UploadNovaNetFile(string fullName, string siteCode, string computerName, string fileName)
         {
+            Console.WriteLine("Upload NovaNet File: " + fileName);
+            _logger.WriteEntry("Upload NovaNet File: " + fileName, EventLogEntryType.Information);
+            var rm = new HttpRequestMessage();
+
+            var qsCollection = HttpUtility.ParseQueryString(string.Empty);
+            qsCollection["siteCode"] = siteCode;
+            qsCollection["computerName"] = computerName;
+            qsCollection["fileName"] = fileName;
+            var queryString = qsCollection.ToString();
             
-            
- 
+            var client = new HttpClient();
+            using (var content = new MultipartFormDataContent())
+            {
+                var filestream = File.Open(fullName, FileMode.Open);
+                content.Add(new StreamContent(filestream), "file", fileName);
+
+                //var requestUri = "https://halfpintstudy.org/hpUpload/api/NovanetUpload?" + queryString; 
+                //var requestUri = "http://asus1/hpuploadapi/api/NovanetUpload?" + queryString;
+                var requestUri = "http://joelaptop4/hpuploadapi/api/NovanetUpload?" + queryString;
+                var result = client.PostAsync(requestUri, content).Result;
+            }
+        }
+
+        private static string DoChecksUploads()
+        {
+            string siteCode = string.Empty;
             _logger.WriteEntry("Starting checks upload console", EventLogEntryType.Information);
 
             //create the archive directory if it doesn't exits
@@ -91,7 +121,7 @@ namespace HalfpintUploadConsole
                 //this should get created by the CHECKS application
                 //if it doesn't exist then there is no work to do so just exit
                 _logger.WriteEntry("The Halfpint folder does not exist", EventLogEntryType.Information);
-                return;
+                return siteCode;
             }
 
             FileInfo[] fis = di.GetFiles();
@@ -113,7 +143,7 @@ namespace HalfpintUploadConsole
                 //this should get created by the CHECKS application
                 //if it doesn't exist then there is no work to do so just exit
                 _logger.WriteEntry("The Halfpint\\Copy folder does not exist", EventLogEntryType.Information);
-                return;
+                return siteCode;
             }
 
             //arcive them first
@@ -139,7 +169,8 @@ namespace HalfpintUploadConsole
                     if (fi.Name.StartsWith("T"))
                         continue;
 
-                    string siteCode = fi.Name.Substring(0, 2);
+                    if (string.IsNullOrEmpty(siteCode))
+                        siteCode = fi.Name.Substring(0, 2);
 
                     //formulate key
                     //add all the numbers in the file name
@@ -164,11 +195,13 @@ namespace HalfpintUploadConsole
                 }
 
             }
+            return siteCode;
         }
 
         private static void UploadChecksFile(string fullName, string siteCode, string key, string fileName)
         {
-            _logger.WriteEntry("UploadFile: " + fileName, EventLogEntryType.Information);
+            Console.WriteLine("UploadChecksFile: " + fileName);
+            _logger.WriteEntry("UploadChecksFile: " + fileName, EventLogEntryType.Information);
             var rm = new HttpRequestMessage();
 
             var qsCollection = HttpUtility.ParseQueryString(string.Empty);
@@ -176,7 +209,7 @@ namespace HalfpintUploadConsole
             qsCollection["key"] = key;
             qsCollection["fileName"] = fileName;
             var queryString = qsCollection.ToString();
-            using (var client = new HttpClient())
+            var client = new HttpClient();
             using (var content = new MultipartFormDataContent())
             {
                 var filestream = File.Open(fullName, FileMode.Open);
