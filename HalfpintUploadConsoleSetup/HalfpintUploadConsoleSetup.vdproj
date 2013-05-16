@@ -15,26 +15,26 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_4CB6597925A7FB17B4E08D408C711521"
+        "MsmKey" = "8:_0D4B15595F073BD265E9B26CF38F0271"
         "OwnerKey" = "8:_A41E3D1C6F5C427FA4767D8CBDCDF8D1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_731D981A933942A37B557F878B0477EB"
-        "OwnerKey" = "8:_7A6101D35E1D44813ECAD60E8C1B8990"
+        "MsmKey" = "8:_270968A37ACD4B00528CAB183D9DBD26"
+        "OwnerKey" = "8:_0D4B15595F073BD265E9B26CF38F0271"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_731D981A933942A37B557F878B0477EB"
+        "MsmKey" = "8:_270968A37ACD4B00528CAB183D9DBD26"
         "OwnerKey" = "8:_A41E3D1C6F5C427FA4767D8CBDCDF8D1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_7A6101D35E1D44813ECAD60E8C1B8990"
-        "OwnerKey" = "8:_A41E3D1C6F5C427FA4767D8CBDCDF8D1"
+        "MsmKey" = "8:_6B66E6102F0B409E824B4AC86FB45A6E"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -45,19 +45,25 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_BC9A152BC2AD957700CCACBBD7183348"
-        "OwnerKey" = "8:_7A6101D35E1D44813ECAD60E8C1B8990"
+        "MsmKey" = "8:_D80693A989CBC959E03BD7B328B463A4"
+        "OwnerKey" = "8:_0D4B15595F073BD265E9B26CF38F0271"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_BC9A152BC2AD957700CCACBBD7183348"
-        "OwnerKey" = "8:_4CB6597925A7FB17B4E08D408C711521"
+        "MsmKey" = "8:_D80693A989CBC959E03BD7B328B463A4"
+        "OwnerKey" = "8:_FABA3B66796DCECE86F54509E5086FA9"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_BC9A152BC2AD957700CCACBBD7183348"
+        "MsmKey" = "8:_D80693A989CBC959E03BD7B328B463A4"
+        "OwnerKey" = "8:_A41E3D1C6F5C427FA4767D8CBDCDF8D1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FABA3B66796DCECE86F54509E5086FA9"
         "OwnerKey" = "8:_A41E3D1C6F5C427FA4767D8CBDCDF8D1"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -70,25 +76,25 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4CB6597925A7FB17B4E08D408C711521"
+        "OwnerKey" = "8:_FABA3B66796DCECE86F54509E5086FA9"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7A6101D35E1D44813ECAD60E8C1B8990"
+        "OwnerKey" = "8:_0D4B15595F073BD265E9B26CF38F0271"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_731D981A933942A37B557F878B0477EB"
+        "OwnerKey" = "8:_270968A37ACD4B00528CAB183D9DBD26"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_BC9A152BC2AD957700CCACBBD7183348"
+        "OwnerKey" = "8:_D80693A989CBC959E03BD7B328B463A4"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -196,76 +202,14 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4CB6597925A7FB17B4E08D408C711521"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_4CB6597925A7FB17B4E08D408C711521"
-                    {
-                    "Name" = "8:System.Net.Http.WebRequest.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Net.Http.WebRequest.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_4DA6E75EABCB46E4A7627C6A1260DAF6"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_731D981A933942A37B557F878B0477EB"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_731D981A933942A37B557F878B0477EB"
-                    {
-                    "Name" = "8:Newtonsoft.Json.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Newtonsoft.Json.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_4DA6E75EABCB46E4A7627C6A1260DAF6"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7A6101D35E1D44813ECAD60E8C1B8990"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0D4B15595F073BD265E9B26CF38F0271"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_7A6101D35E1D44813ECAD60E8C1B8990"
+                    "_0D4B15595F073BD265E9B26CF38F0271"
                     {
                     "Name" = "8:System.Net.Http.Formatting.dll"
                     "Attributes" = "3:512"
@@ -289,20 +233,102 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BC9A152BC2AD957700CCACBBD7183348"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_270968A37ACD4B00528CAB183D9DBD26"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_270968A37ACD4B00528CAB183D9DBD26"
+                    {
+                    "Name" = "8:Newtonsoft.Json.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Newtonsoft.Json.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_4DA6E75EABCB46E4A7627C6A1260DAF6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6B66E6102F0B409E824B4AC86FB45A6E"
+            {
+            "SourcePath" = "8:..\\HalfpintUploadConsole\\Folder-Upload-icon.ico"
+            "TargetName" = "8:Folder-Upload-icon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_4DA6E75EABCB46E4A7627C6A1260DAF6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D80693A989CBC959E03BD7B328B463A4"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_BC9A152BC2AD957700CCACBBD7183348"
+                    "_D80693A989CBC959E03BD7B328B463A4"
                     {
                     "Name" = "8:System.Net.Http.dll"
                     "Attributes" = "3:512"
                     }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_4DA6E75EABCB46E4A7627C6A1260DAF6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FABA3B66796DCECE86F54509E5086FA9"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_FABA3B66796DCECE86F54509E5086FA9"
+                    {
+                    "Name" = "8:System.Net.Http.WebRequest.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Net.Http.WebRequest.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_4DA6E75EABCB46E4A7627C6A1260DAF6"
@@ -352,7 +378,7 @@
             "{1525181F-901A-416C-8A58-119130FE478E}:_ED323D7C3CBF4EEABE6972FCFEB4868E"
             {
             "Name" = "8:#1919"
-            "AlwaysCreate" = "11:FALSE"
+            "AlwaysCreate" = "11:TRUE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:ProgramMenuFolder"
@@ -375,9 +401,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:HalfpintUploadConsoleSetup"
-        "ProductCode" = "8:{B19F185B-257A-41C3-B6C1-824845475FF7}"
-        "PackageCode" = "8:{626DDA67-CEBD-4848-9FAC-C3C290E5FA31}"
+        "ProductName" = "8:HalfpintUploadConsole"
+        "ProductCode" = "8:{BFCA9404-8CB0-461C-800C-4B3EA1F8EEB1}"
+        "PackageCode" = "8:{3E3408A1-895C-46B6-ADA7-6272A6935031}"
         "UpgradeCode" = "8:{01002D89-FEEC-4097-979C-25E8849AFDDB}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -385,12 +411,12 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "Manufacturer" = "8:Halfpint"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:HalfpintUploadConsoleSetup"
+        "Title" = "8:HalfpintUploadConsole"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:Joe Rezuke"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -502,12 +528,26 @@
             "Name" = "8:Halfpint Upload"
             "Arguments" = "8:novanet"
             "Description" = "8:"
-            "ShowCmd" = "3:7"
+            "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
             "Target" = "8:_A41E3D1C6F5C427FA4767D8CBDCDF8D1"
             "Folder" = "8:_2EB82E41AE1C40AA80D3D309D415AF38"
             "WorkingFolder" = "8:_4DA6E75EABCB46E4A7627C6A1260DAF6"
+            "Icon" = "8:_6B66E6102F0B409E824B4AC86FB45A6E"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_AF3525066F504887A3E17A3342A6357A"
+            {
+            "Name" = "8:HalfpintUploadConsole"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_ED323D7C3CBF4EEABE6972FCFEB4868E"
+            "Folder" = "8:_ED323D7C3CBF4EEABE6972FCFEB4868E"
+            "WorkingFolder" = "8:_ED323D7C3CBF4EEABE6972FCFEB4868E"
             "Icon" = "8:"
             "Feature" = "8:"
             }
