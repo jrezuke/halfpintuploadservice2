@@ -41,15 +41,20 @@ namespace HalfpintUploadConsole
             //    Directory.CreateDirectory(localDataPath);
 
             //var di = new DirectoryInfo(localDataPath);
-            
+
+            Console.WriteLine("checks upload");
             //string siteCode = DoChecksUploads();
             string siteCode = "01";
             if (!string.IsNullOrEmpty(siteCode))
             {
                 if (arg == "novanet")
-                    DoNovanetUploads(siteCode, computerName);
+                {
+                    Console.WriteLine("novanet upload");
+                
+                    //DoNovanetUploads(siteCode, computerName);
+                }
             }
-            //Console.Read();
+            Console.Read();
 
         }
 
@@ -93,8 +98,8 @@ namespace HalfpintUploadConsole
                 content.Add(new StreamContent(filestream), "file", fileName);
 
                 //var requestUri = "https://halfpintstudy.org/hpUpload/api/NovanetUpload?" + queryString; 
-                //var requestUri = "http://asus1/hpuploadapi/api/NovanetUpload?" + queryString;
-                var requestUri = "http://joelaptop4/hpuploadapi/api/NovanetUpload?" + queryString;
+                var requestUri = "http://asus1/hpuploadapi/api/NovanetUpload?" + queryString;
+                //var requestUri = "http://joelaptop4/hpuploadapi/api/NovanetUpload?" + queryString;
                 var result = client.PostAsync(requestUri, content).Result;
             }
         }
@@ -216,8 +221,8 @@ namespace HalfpintUploadConsole
                 content.Add(new StreamContent(filestream), "file", fileName);
 
                 //var requestUri = "https://halfpintstudy.org/hpUpload/api/upload?" + queryString; 
-                //var requestUri = "http://asus1/hpuploadapi/api/upload?" + queryString;
-                var requestUri = "http://joelaptop4/hpuploadapi/api/upload?" + queryString;
+                var requestUri = "http://asus1/hpuploadapi/api/upload?" + queryString;
+                //var requestUri = "http://joelaptop4/hpuploadapi/api/upload?" + queryString;
                 var result = client.PostAsync(requestUri, content).Result;
             }
         }
