@@ -51,7 +51,7 @@ namespace HalfpintUploadConsole
                 {
                     Console.WriteLine("novanet upload");
                 
-                    //DoNovanetUploads(siteCode, computerName);
+                    DoNovanetUploads(siteCode, computerName);
                 }
             }
             Console.Read();
