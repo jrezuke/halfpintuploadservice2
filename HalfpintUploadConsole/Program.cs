@@ -18,7 +18,6 @@ namespace HalfpintUploadConsole
             string computerName = Environment.MachineName;
             Console.WriteLine("MachineName: {0}", computerName);
             
-            
             string arg = string.Empty;
             if (args.Length > 0)
             {
@@ -26,9 +25,11 @@ namespace HalfpintUploadConsole
                 Console.WriteLine("Running with argument:" + arg);
             }
 
+            //trap unhandled errors
             AppDomain currentDomain = AppDomain.CurrentDomain;
             currentDomain.UnhandledException += MyHandler;
 
+            //set up the event logging
             if (!EventLog.SourceExists("HalfpintUploadConsole"))
             {
                 EventLog.CreateEventSource(
@@ -36,6 +37,7 @@ namespace HalfpintUploadConsole
             }
             _logger = new EventLog("Application") { Source = "HalfpintUploadConsole" };
 
+            //todo - this could be used to store the last date of the upload
             //string localDataPath = Path.Combine(System.Environment.SpecialFolder.LocalApplicationData.ToString(), "Halfpint");
             //if(!Directory.Exists(localDataPath))
             //    Directory.CreateDirectory(localDataPath);
@@ -43,19 +45,18 @@ namespace HalfpintUploadConsole
             //var di = new DirectoryInfo(localDataPath);
 
             Console.WriteLine("checks upload");
-            //string siteCode = DoChecksUploads();
-            string siteCode = "01";
+            string siteCode = DoChecksUploads();
+            //string siteCode = "01";
+            
             if (!string.IsNullOrEmpty(siteCode))
             {
                 if (arg == "novanet")
                 {
                     Console.WriteLine("novanet upload");
-                
                     DoNovanetUploads(siteCode, computerName);
                 }
             }
-            Console.Read();
-
+            //Console.Read();
         }
 
         private static void DoNovanetUploads(string siteCode, string computerName)
@@ -83,8 +84,7 @@ namespace HalfpintUploadConsole
         {
             Console.WriteLine("Upload NovaNet File: " + fileName);
             _logger.WriteEntry("Upload NovaNet File: " + fileName, EventLogEntryType.Information);
-            var rm = new HttpRequestMessage();
-
+            
             var qsCollection = HttpUtility.ParseQueryString(string.Empty);
             qsCollection["siteCode"] = siteCode;
             qsCollection["computerName"] = computerName;
@@ -97,10 +97,11 @@ namespace HalfpintUploadConsole
                 var filestream = File.Open(fullName, FileMode.Open);
                 content.Add(new StreamContent(filestream), "file", fileName);
 
-                //var requestUri = "https://halfpintstudy.org/hpUpload/api/NovanetUpload?" + queryString; 
-                var requestUri = "http://asus1/hpuploadapi/api/NovanetUpload?" + queryString;
+                var requestUri = "https://halfpintstudy.org/hpUpload/api/NovanetUpload?" + queryString; 
+                //var requestUri = "http://asus1/hpuploadapi/api/NovanetUpload?" + queryString;
                 //var requestUri = "http://joelaptop4/hpuploadapi/api/NovanetUpload?" + queryString;
                 var result = client.PostAsync(requestUri, content).Result;
+                Console.WriteLine("Result: " + result.Content);
             }
         }
 
@@ -207,8 +208,7 @@ namespace HalfpintUploadConsole
         {
             Console.WriteLine("UploadChecksFile: " + fileName);
             _logger.WriteEntry("UploadChecksFile: " + fileName, EventLogEntryType.Information);
-            var rm = new HttpRequestMessage();
-
+            
             var qsCollection = HttpUtility.ParseQueryString(string.Empty);
             qsCollection["siteCode"] = siteCode;
             qsCollection["key"] = key;
@@ -220,8 +220,8 @@ namespace HalfpintUploadConsole
                 var filestream = File.Open(fullName, FileMode.Open);
                 content.Add(new StreamContent(filestream), "file", fileName);
 
-                //var requestUri = "https://halfpintstudy.org/hpUpload/api/upload?" + queryString; 
-                var requestUri = "http://asus1/hpuploadapi/api/upload?" + queryString;
+                var requestUri = "https://halfpintstudy.org/hpUpload/api/upload?" + queryString; 
+                //var requestUri = "http://asus1/hpuploadapi/api/upload?" + queryString;
                 //var requestUri = "http://joelaptop4/hpuploadapi/api/upload?" + queryString;
                 var result = client.PostAsync(requestUri, content).Result;
             }
