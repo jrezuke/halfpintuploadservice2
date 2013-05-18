@@ -99,7 +99,7 @@ namespace HalfpintUploadService2
                 //var requestUri = "http://asus1/hpuploadapi/api/NovanetUpload?" + queryString;
                 //var requestUri = "http://joelaptop4/hpuploadapi/api/NovanetUpload?" + queryString;
                 var result = client.PostAsync(requestUri, content).Result;
-                Console.WriteLine("Result: " + result.Content);
+                
             }
         }
 
