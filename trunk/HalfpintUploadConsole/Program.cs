@@ -47,7 +47,7 @@ namespace HalfpintUploadConsole
             Console.WriteLine("checks upload");
             string siteCode = DoChecksUploads();
             //string siteCode = "01";
-            
+
             if (!string.IsNullOrEmpty(siteCode))
             {
                 if (arg == "novanet")
@@ -101,7 +101,7 @@ namespace HalfpintUploadConsole
                 //var requestUri = "http://asus1/hpuploadapi/api/NovanetUpload?" + queryString;
                 //var requestUri = "http://joelaptop4/hpuploadapi/api/NovanetUpload?" + queryString;
                 var result = client.PostAsync(requestUri, content).Result;
-                Console.WriteLine("Result: " + result.Content);
+                Console.WriteLine("Result: " + result.StatusCode);
             }
         }
 
@@ -224,6 +224,7 @@ namespace HalfpintUploadConsole
                 //var requestUri = "http://asus1/hpuploadapi/api/upload?" + queryString;
                 //var requestUri = "http://joelaptop4/hpuploadapi/api/upload?" + queryString;
                 var result = client.PostAsync(requestUri, content).Result;
+                Console.WriteLine("Result: " + result.StatusCode);
             }
         }
 
