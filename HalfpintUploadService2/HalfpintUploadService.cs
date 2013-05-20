@@ -12,7 +12,7 @@ namespace HalfpintUploadService2
     partial class HalfpintUploadService : ServiceBase
     {
         private Timer _timer;
-        private readonly EventLog _logger;
+        private EventLog _logger = null;
         
         public HalfpintUploadService()
         {
@@ -22,7 +22,8 @@ namespace HalfpintUploadService2
                 EventLog.CreateEventSource(
                         "Halfpint", "Application");
             }
-            _logger = new EventLog("Application") { Source = "Halfpint" };
+            _logger = new EventLog("Application");
+            _logger.Source = "Halfpint";
         }
 
         protected override void OnStart(string[] args)
@@ -32,7 +33,7 @@ namespace HalfpintUploadService2
             _timer.Start();
             _timer.Elapsed += TimerElapsed;
             _logger.WriteEntry("Timer started", EventLogEntryType.Information);
-            StartAction();
+            //StartAction();
         }
 
         private void TimerElapsed(object sender, ElapsedEventArgs e)

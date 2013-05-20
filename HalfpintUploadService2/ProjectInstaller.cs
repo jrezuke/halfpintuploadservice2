@@ -19,8 +19,8 @@ namespace HalfpintUploadService2
 
         private void serviceInstaller1_Committed(object sender, InstallEventArgs e)
         {
-            ServiceController sc = new ServiceController("HalfpintUploadService");
-            sc.Start();
+            //ServiceController sc = new ServiceController("HalfpintUploadService");
+            //sc.Start();
         }
     }
 }
