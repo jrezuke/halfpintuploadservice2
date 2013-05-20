@@ -59,8 +59,7 @@ namespace HalfpintUploadService2
 
         private void DoNovanetUploads(string siteCode, string computerName)
         {
-            Console.WriteLine("Starting novanet upload console");
-            _logger.WriteEntry("Starting novanet upload console", EventLogEntryType.Information);
+            _logger.WriteEntry("Starting novanet upload service", EventLogEntryType.Information);
 
             //check if folder exists
             string novanetFolder = ConfigurationManager.AppSettings["NovaNetArchives"];
@@ -80,7 +79,6 @@ namespace HalfpintUploadService2
 
         private  void UploadNovaNetFile(string fullName, string siteCode, string computerName, string fileName)
         {
-            Console.WriteLine("Upload NovaNet File: " + fileName);
             _logger.WriteEntry("Upload NovaNet File: " + fileName, EventLogEntryType.Information);
 
             var qsCollection = HttpUtility.ParseQueryString(string.Empty);
