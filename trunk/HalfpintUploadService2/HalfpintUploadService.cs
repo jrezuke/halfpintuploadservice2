@@ -17,13 +17,13 @@ namespace HalfpintUploadService2
         public HalfpintUploadService()
         {
             InitializeComponent();
-            if (!EventLog.SourceExists("Halfpint"))
+            if (!EventLog.SourceExists("HalfpintUploadService"))
             {
                 EventLog.CreateEventSource(
-                        "Halfpint", "Application");
+                        "HalfpintUploadService", "Application");
             }
             _logger = new EventLog("Application");
-            _logger.Source = "Halfpint";
+            _logger.Source = "HalfpintUploadService";
         }
 
         protected override void OnStart(string[] args)
@@ -33,7 +33,7 @@ namespace HalfpintUploadService2
             _timer.Start();
             _timer.Elapsed += TimerElapsed;
             _logger.WriteEntry("Timer started", EventLogEntryType.Information);
-            //StartAction();
+            StartAction();
         }
 
         private void TimerElapsed(object sender, ElapsedEventArgs e)
