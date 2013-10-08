@@ -39,7 +39,7 @@ namespace HalfpintUploadConsole
 
             //todo - this could be used to store the last date of the upload
             //string localDataPath = Path.Combine(System.Environment.SpecialFolder.LocalApplicationData.ToString(), "Halfpint");
-            //if(!Directory.Exists(localDataPath))
+            //if (!Directory.Exists(localDataPath))
             //    Directory.CreateDirectory(localDataPath);
 
             //var di = new DirectoryInfo(localDataPath);
@@ -136,7 +136,7 @@ namespace HalfpintUploadConsole
                 //if the file is older than 1 week then archive
                 if (fi.LastWriteTime.CompareTo(DateTime.Today.AddDays(-7)) < 0)
                 {
-                    fi.MoveTo(Path.Combine(archiveFolder,fi.Name));
+                    fi.MoveTo(Path.Combine(archiveFolder, fi.Name));
                     _logger.WriteEntry("Archived file: " + fi.Name, EventLogEntryType.Information);
                 }
             }
