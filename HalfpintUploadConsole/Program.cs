@@ -136,8 +136,18 @@ namespace HalfpintUploadConsole
                 //if the file is older than 1 week then archive
                 if (fi.LastWriteTime.CompareTo(DateTime.Today.AddDays(-7)) < 0)
                 {
-                    fi.MoveTo(Path.Combine(archiveFolder, fi.Name));
-                    _logger.WriteEntry("Archived file: " + fi.Name, EventLogEntryType.Information);
+                    try
+                    {
+                        if (!File.Exists(Path.Combine(archiveFolder, fi.Name)))
+                        {
+                            fi.MoveTo(Path.Combine(archiveFolder, fi.Name));
+                            _logger.WriteEntry("Archived file: " + fi.Name, EventLogEntryType.Information);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.WriteEntry("***Error moving file name:" +fi.Name + " - error message:"  + ex.Message, EventLogEntryType.Error);
+                    }
                 }
             }
 
